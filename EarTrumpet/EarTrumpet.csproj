@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\GitVersionTask.5.5.1\build\GitVersionTask.props" Condition="Exists('..\packages\GitVersionTask.5.5.1\build\GitVersionTask.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -67,7 +67,8 @@
     <Reference Include="Windows, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath Condition="Exists('$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Windows.winmd')">$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\Windows.winmd</HintPath>
-      <HintPath Condition="Exists('$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd')">$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd</HintPath>
+      <HintPath Condition="Exists('$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.14393.0\Windows.winmd')">$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.14393.0\Windows.winmd</HintPath>
+      <HintPath>..\..\..\Windows Kits\10\UnionMetadata\Windows.winmd</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -217,6 +218,7 @@
     <Compile Include="UI\Behaviors\TextBoxEx.cs" />
     <Compile Include="UI\Controls\ListView.cs" />
     <Compile Include="UI\Controls\ListViewItem.cs" />
+    <Compile Include="UI\Controls\VerticalVolumeSlider.cs" />
     <Compile Include="Interop\Helpers\LegacyControlPanelHelper.cs" />
     <Compile Include="UI\Helpers\NavigationCookie.cs" />
     <Compile Include="UI\Helpers\FlyoutViewState.cs" />
@@ -294,6 +296,7 @@
     <Compile Include="UI\ViewModels\AdvertisedCategorySettingsViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetAboutPageViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetLegacySettingsPageViewModel.cs" />
+    <Compile Include="UI\ViewModels\EarTrumpetVolumeMixerSettingsPageViewModel.cs" />
     <Compile Include="UI\ViewModels\HotkeyViewModel.cs" />
     <Compile Include="UI\ViewModels\IFlyoutViewModel.cs" />
     <Compile Include="UI\ViewModels\IPopupHostViewModel.cs" />
@@ -377,6 +380,9 @@
     <Compile Include="UI\Views\FullWindow.xaml.cs">
       <DependentUpon>FullWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Views\LegacyFullWindow.xaml.cs">
+      <DependentUpon>LegacyFullWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -391,6 +397,7 @@
     <Compile Include="UI\ViewModels\DeviceViewModel.cs" />
     <Compile Include="UI\ViewModels\FlyoutViewModel.cs" />
     <Compile Include="UI\ViewModels\FullWindowViewModel.cs" />
+    <Compile Include="UI\ViewModels\LegacyFullWindowViewModel.cs" />
     <Compile Include="UI\ViewModels\DeviceCollectionViewModel.cs" />
     <Compile Include="BindableBase.cs" />
     <Compile Include="UI\ViewModels\AudioSessionViewModel.cs" />
@@ -418,6 +425,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Views\FullWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Views\LegacyFullWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -497,6 +508,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

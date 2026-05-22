@@ -198,6 +198,9 @@
   <data name="SettingsUseLegacyEarTrumpetIcon" xml:space="preserve">
     <value>使用经典 EarTrumpet 图标</value>
   </data>
+  <data name="SettingsUseLegacyVolumeMixer" xml:space="preserve">
+    <value>使用旧版音量合成器</value>
+  </data>
   <data name="MoreCommandsAccessibleText" xml:space="preserve">
     <value>更多命令</value>
   </data>
@@ -254,6 +257,21 @@
   </data>
   <data name="SettingsOpenMixerText" xml:space="preserve">
     <value>打开音量合成器</value>
+  </data>
+  <data name="VolumeMixerLegacyModeText" xml:space="preserve">
+    <value>Legacy</value>
+  </data>
+  <data name="VolumeMixerDeviceHeaderText" xml:space="preserve">
+    <value>设备</value>
+  </data>
+  <data name="VolumeMixerApplicationsHeaderText" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="VolumeMixerModernModeText" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="VolumeMixerSettingsPageText" xml:space="preserve">
+    <value>音量合成器设置</value>
   </data>
   <data name="ToggleSwitchOffText" xml:space="preserve">
     <value>关</value>

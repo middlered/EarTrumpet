@@ -198,6 +198,9 @@
   <data name="SettingsUseLegacyEarTrumpetIcon" xml:space="preserve">
     <value>Use legacy EarTrumpet icon</value>
   </data>
+  <data name="SettingsUseLegacyVolumeMixer" xml:space="preserve">
+    <value>Use legacy volume mixer</value>
+  </data>
   <data name="MoreCommandsAccessibleText" xml:space="preserve">
     <value>More commands</value>
   </data>
@@ -254,6 +257,21 @@
   </data>
   <data name="SettingsOpenMixerText" xml:space="preserve">
     <value>Open Mixer</value>
+  </data>
+  <data name="VolumeMixerLegacyModeText" xml:space="preserve">
+    <value>Legacy</value>
+  </data>
+  <data name="VolumeMixerDeviceHeaderText" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="VolumeMixerApplicationsHeaderText" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="VolumeMixerModernModeText" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="VolumeMixerSettingsPageText" xml:space="preserve">
+    <value>Volume mixer settings</value>
   </data>
   <data name="ToggleSwitchOffText" xml:space="preserve">
     <value>Off</value>

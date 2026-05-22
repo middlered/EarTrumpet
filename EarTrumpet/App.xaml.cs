@@ -104,6 +104,7 @@ namespace EarTrumpet
             _mixerWindow = new WindowHolder(CreateMixerExperience);
             _settingsWindow = new WindowHolder(CreateSettingsExperience);
 
+            Settings.UseLegacyVolumeMixerChanged += (_, __) => _mixerWindow.RecreateIfOpen();
             Settings.FlyoutHotkeyTyped += () => _flyoutViewModel.OpenFlyout(InputType.Keyboard);
             Settings.MixerHotkeyTyped += () => _mixerWindow.OpenOrClose();
             Settings.SettingsHotkeyTyped += () => _settingsWindow.OpenOrBringToFront();
@@ -247,6 +248,7 @@ namespace EarTrumpet
                         new EarTrumpetShortcutsPageViewModel(Settings),
                         new EarTrumpetMouseSettingsPageViewModel(Settings),
                         new EarTrumpetCommunitySettingsPageViewModel(Settings),
+                        new EarTrumpetVolumeMixerSettingsPageViewModel(Settings),
                         new EarTrumpetLegacySettingsPageViewModel(Settings),
                         new EarTrumpetAboutPageViewModel(() => _errorReporter.DisplayDiagnosticData(), Settings)
                     });
@@ -275,7 +277,15 @@ namespace EarTrumpet
             return category;
         }
 
-        private Window CreateMixerExperience() => new FullWindow { DataContext = new FullWindowViewModel(CollectionViewModel) };
+        private Window CreateMixerExperience()
+        {
+            if (Settings.UseLegacyVolumeMixer)
+            {
+                return new LegacyFullWindow { DataContext = new LegacyFullWindowViewModel(CollectionViewModel) };
+            }
+
+            return new FullWindow { DataContext = new FullWindowViewModel(CollectionViewModel) };
+        }
 
         private void AbsoluteVolumeIncrement()
         {

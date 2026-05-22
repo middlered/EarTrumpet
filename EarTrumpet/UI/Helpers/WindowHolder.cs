@@ -39,6 +39,27 @@ namespace EarTrumpet.UI.Helpers
             }
         }
 
+        public void RecreateIfOpen()
+        {
+            if (_openWindow == null)
+            {
+                return;
+            }
+
+            var window = _openWindow;
+            EventHandler onClosed = null;
+            onClosed = (_, __) =>
+            {
+                window.Closed -= onClosed;
+                if (_openWindow == null)
+                {
+                    CreateWindow();
+                }
+            };
+            window.Closed += onClosed;
+            window.Close();
+        }
+
         private void CreateWindow()
         {
             _openWindow = _create();

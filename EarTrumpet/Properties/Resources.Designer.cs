@@ -1440,6 +1440,15 @@ namespace EarTrumpet.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use legacy volume mixer.
+        /// </summary>
+        public static string SettingsUseLegacyVolumeMixer {
+            get {
+                return ResourceManager.GetString("SettingsUseLegacyVolumeMixer", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Use logarithmic volume scale.
         /// </summary>
         public static string SettingsUseLogarithmicVolume {
@@ -1673,6 +1682,51 @@ namespace EarTrumpet.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Applications.
+        /// </summary>
+        public static string VolumeMixerApplicationsHeaderText {
+            get {
+                return ResourceManager.GetString("VolumeMixerApplicationsHeaderText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Device.
+        /// </summary>
+        public static string VolumeMixerDeviceHeaderText {
+            get {
+                return ResourceManager.GetString("VolumeMixerDeviceHeaderText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Legacy.
+        /// </summary>
+        public static string VolumeMixerLegacyModeText {
+            get {
+                return ResourceManager.GetString("VolumeMixerLegacyModeText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Modern.
+        /// </summary>
+        public static string VolumeMixerModernModeText {
+            get {
+                return ResourceManager.GetString("VolumeMixerModernModeText", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Volume mixer settings.
+        /// </summary>
+        public static string VolumeMixerSettingsPageText {
+            get {
+                return ResourceManager.GetString("VolumeMixerSettingsPageText", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Learn more.
         /// </summary>

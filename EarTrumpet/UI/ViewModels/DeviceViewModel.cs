@@ -1,6 +1,7 @@
 ﻿using EarTrumpet.DataModel.Audio;
 using EarTrumpet.DataModel.WindowsAudio;
 using EarTrumpet.Extensions;
+using EarTrumpet.UI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,7 +10,7 @@ using System.Linq;
 
 namespace EarTrumpet.UI.ViewModels
 {
-    public class DeviceViewModel : AudioSessionViewModel, IDeviceViewModel
+    public class DeviceViewModel : AudioSessionViewModel, IDeviceViewModel, IAppIconSource
     {
         public class DisplayNameComparer : IComparer<DeviceViewModel>
         {
@@ -37,6 +38,8 @@ namespace EarTrumpet.UI.ViewModels
         public string DeviceDescription => ((IAudioDeviceWindowsAudio)_device).DeviceDescription;
         public string EnumeratorName => ((IAudioDeviceWindowsAudio)_device).EnumeratorName;
         public string InterfaceName => ((IAudioDeviceWindowsAudio)_device).InterfaceName;
+        public string IconPath => _device.IconPath;
+        public bool IsDesktopApp => true;
         public ObservableCollection<IAppItemViewModel> Apps { get; }
 
         public bool IsDisplayNameVisible

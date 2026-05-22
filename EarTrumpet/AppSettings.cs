@@ -10,6 +10,7 @@ namespace EarTrumpet
     public class AppSettings
     {
         public event EventHandler<bool> UseLegacyIconChanged;
+        public event EventHandler<bool> UseLegacyVolumeMixerChanged;
         public event Action FlyoutHotkeyTyped;
         public event Action MixerHotkeyTyped;
         public event Action SettingsHotkeyTyped;
@@ -124,6 +125,16 @@ namespace EarTrumpet
             {
                 _settings.Set("UseLegacyIcon", value.ToString());
                 UseLegacyIconChanged?.Invoke(null, UseLegacyIcon);
+            }
+        }
+
+        public bool UseLegacyVolumeMixer
+        {
+            get => _settings.Get("UseLegacyVolumeMixer", false);
+            set
+            {
+                _settings.Set("UseLegacyVolumeMixer", value);
+                UseLegacyVolumeMixerChanged?.Invoke(null, UseLegacyVolumeMixer);
             }
         }
 

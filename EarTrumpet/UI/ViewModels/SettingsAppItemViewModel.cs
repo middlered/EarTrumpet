@@ -50,6 +50,7 @@ namespace EarTrumpet.UI.ViewModels
         public string IconPath { get; set; }
         public bool IsExpanded => false;
         public bool IsMovable => false;
+        public bool IsSystemSoundsSession { get; set; }
         public float PeakValue1 => 0;
         public float PeakValue2 => 0;
         public string PersistedOutputDevice => throw new NotImplementedException();
@@ -63,6 +64,7 @@ namespace EarTrumpet.UI.ViewModels
             AppId = session.AppId;
             DisplayName = session.DisplayName;
             IsDesktopApp = session.IsDesktopApp;
+            IsSystemSoundsSession = session.IsSystemSoundsSession;
             IconPath = session.IconPath;
             Id = session.AppId;
         }

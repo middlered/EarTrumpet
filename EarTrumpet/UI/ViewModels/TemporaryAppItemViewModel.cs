@@ -59,6 +59,7 @@ namespace EarTrumpet.UI.ViewModels
         public string IconPath { get; }
         public bool IsExpanded { get; }
         public bool IsDesktopApp { get; }
+        public bool IsSystemSoundsSession { get; }
         public bool IsMovable { get; }
         public float PeakValue1 { get; }
         public float PeakValue2 { get; }
@@ -98,6 +99,7 @@ namespace EarTrumpet.UI.ViewModels
             IconText = app.IconText;
             IconPath = app.IconPath;
             IsDesktopApp = app.IsDesktopApp;
+            IsSystemSoundsSession = app.IsSystemSoundsSession;
             IsMovable = app.IsMovable;
             IsExpanded = isChild;
             PeakValue1 = 0;

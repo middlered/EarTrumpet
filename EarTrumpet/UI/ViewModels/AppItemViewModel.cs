@@ -32,6 +32,7 @@ namespace EarTrumpet.UI.ViewModels
         public string AppId => _session.AppId;
         public string IconPath => _session.IconPath;
         public bool IsDesktopApp => _session.IsDesktopApp;
+        public bool IsSystemSoundsSession => _session.IsSystemSoundsSession;
         public bool IsExpanded { get; private set; }
         public int ProcessId => _session.ProcessId;
         public ObservableCollection<IAppItemViewModel> ChildApps { get; private set; }

@@ -178,6 +178,16 @@
                           IsChecked="{Binding UseLogarithmicVolume, Mode=TwoWay}" />
             </StackPanel>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EarTrumpetVolumeMixerSettingsPageViewModel}">
+            <StackPanel Orientation="Vertical">
+                <CheckBox HorizontalAlignment="Left"
+                          Content="{x:Static resx:Resources.SettingsUseLegacyVolumeMixer}"
+                          IsChecked="{Binding UseLegacyVolumeMixer, Mode=TwoWay}" />
+                <TextBlock Margin="12,0,12,12"
+                           Style="{StaticResource BodySubText}"
+                           Text="{Binding VolumeMixerModeText}" />
+            </StackPanel>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EarTrumpetLegacySettingsPageViewModel}">
             <StackPanel Orientation="Vertical">
                 <CheckBox HorizontalAlignment="Left"
