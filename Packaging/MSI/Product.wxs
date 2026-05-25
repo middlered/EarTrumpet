@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+  xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="EarTrumpet"
+           Language="1033"
+           Version="$(var.AppVersion)"
+           Manufacturer="EarTrumpet"
+           UpgradeCode="B0CDE2F4-2AE6-4C91-92A6-2CE7B36A1F73"
+           InstallerVersion="500"
+           Compressed="yes"
+           Scope="perUser">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of EarTrumpet is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Property Id="ARPPRODUCTICON" Value="EarTrumpetIcon" />
+    <Icon Id="EarTrumpetIcon" SourceFile="$(var.SourceDir)\EarTrumpet\Assets\Icon-Light.ico" />
+
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="INSTALLFOLDER" Name="EarTrumpet" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="EarTrumpet" />
+    </StandardDirectory>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="RegistryCleanup" Guid="6A7CE722-9D89-46B7-8C0D-663F4B7F2F8C">
+        <RemoveRegistryKey Id="RemoveEarTrumpetSettings"
+                           Root="HKCU"
+                           Key="Software\EarTrumpet"
+                           Action="removeOnUninstall" />
+        <RemoveRegistryValue Id="RemoveRunEntry"
+                             Root="HKCU"
+                             Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                             Name="EarTrumpet" />
+        <RegistryValue Root="HKCU"
+                       Key="Software\EarTrumpet\Installer"
+                       Name="Cleanup"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcuts" Guid="D3D8B6E3-8E9C-4DB8-B7C9-EE0A6C1E5D0A">
+        <Shortcut Id="StartMenuShortcut"
+                  Name="EarTrumpet"
+                  Description="EarTrumpet"
+                  Target="[INSTALLFOLDER]EarTrumpet.exe"
+                  WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU"
+                       Key="Software\EarTrumpet"
+                       Name="Installed"
+                       Type="integer"
+                       Value="1"
+                       KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <Feature Id="ProductFeature" Title="EarTrumpet" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcuts" />
+      <ComponentRef Id="RegistryCleanup" />
+    </Feature>
+  </Package>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Files Include="$(var.BuildOutputDir)\**\*" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

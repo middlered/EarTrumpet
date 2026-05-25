@@ -16,3 +16,17 @@
 6. Open `EarTrumpet.vs15.sln` in Visual Studio.
 7. Change the target platform to `x86` and build the `EarTrumpet.Package` project.
 8. You're done. If you plan on submitting your changes to us, please review the [Contributing guide](https://github.com/File-New-Project/EarTrumpet/blob/master/CONTRIBUTING.md) first.
+
+## MSI (non-Store) build
+### Requirements
+* [WiX Toolset v7](https://wixtoolset.org/releases/) (v4+ supported)
+
+### Build steps
+1. Open a Developer PowerShell.
+2. From the repo root, run:
+
+```powershell
+.\Packaging\MSI\Build-Msi.ps1 -Configuration Release
+```
+
+The MSI will be placed under `artifacts\msi`.
