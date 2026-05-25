@@ -156,6 +156,24 @@ namespace EarTrumpet
             set => _settings.Set("UseGlobalMouseWheelHook", value);
         }
 
+        public bool RunAtStartup
+        {
+            get
+            {
+                var enabled = StartupRegistryHelper.IsEnabled();
+                if (_settings.Get("RunAtStartup", enabled) != enabled)
+                {
+                    _settings.Set("RunAtStartup", enabled);
+                }
+                return enabled;
+            }
+            set
+            {
+                _settings.Set("RunAtStartup", value);
+                StartupRegistryHelper.SetEnabled(value);
+            }
+        }
+
         public bool HasShownFirstRun
         {
             get => _settings.HasKey("hasShownFirstRun");

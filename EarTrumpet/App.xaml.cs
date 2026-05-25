@@ -247,6 +247,7 @@ namespace EarTrumpet
                     {
                         new EarTrumpetShortcutsPageViewModel(Settings),
                         new EarTrumpetMouseSettingsPageViewModel(Settings),
+                        new EarTrumpetStartupSettingsPageViewModel(Settings),
                         new EarTrumpetCommunitySettingsPageViewModel(Settings),
                         new EarTrumpetVolumeMixerSettingsPageViewModel(Settings),
                         new EarTrumpetLegacySettingsPageViewModel(Settings),

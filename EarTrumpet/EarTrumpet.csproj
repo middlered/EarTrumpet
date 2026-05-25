@@ -197,6 +197,7 @@
     <Compile Include="Interop\Helpers\MouseHook.cs" />
     <Compile Include="Interop\Helpers\SettingsPageHelper.cs" />
     <Compile Include="Interop\Helpers\PackageHelper.cs" />
+    <Compile Include="Interop\Helpers\StartupRegistryHelper.cs" />
     <Compile Include="Interop\IShellItemImageFactory.cs" />
     <Compile Include="Interop\MMDeviceAPI\IAudioPolicyConfigFactoryVariantFor21H2.cs" />
     <Compile Include="Interop\MMDeviceAPI\IAudioPolicyConfigFactory.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="UI\ViewModels\EarTrumpetCommunitySettingsPageViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetMouseSettingsPageViewModel.cs" />
     <Compile Include="UI\ViewModels\EarTrumpetShortcutsPageViewModel.cs" />
+    <Compile Include="UI\ViewModels\EarTrumpetStartupSettingsPageViewModel.cs" />
     <Compile Include="Extensibility\IEarTrumpetAddonAppContent.cs" />
     <Compile Include="Extensibility\IEarTrumpetAddonDeviceContent.cs" />
     <Compile Include="Extensibility\IEarTrumpetAddonEvents.cs" />

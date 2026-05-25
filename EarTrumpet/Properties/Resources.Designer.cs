@@ -835,6 +835,15 @@ namespace EarTrumpet.Properties {
                 return ResourceManager.GetString("LegacySettingsPageText", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Startup.
+        /// </summary>
+        public static string StartupSettingsPageText {
+            get {
+                return ResourceManager.GetString("StartupSettingsPageText", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Volume Mixer.
@@ -1445,6 +1454,15 @@ namespace EarTrumpet.Properties {
         public static string SettingsUseLegacyVolumeMixer {
             get {
                 return ResourceManager.GetString("SettingsUseLegacyVolumeMixer", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Start EarTrumpet with Windows.
+        /// </summary>
+        public static string SettingsStartWithWindowsText {
+            get {
+                return ResourceManager.GetString("SettingsStartWithWindowsText", resourceCulture);
             }
         }
 
